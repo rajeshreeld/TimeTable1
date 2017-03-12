@@ -28,4 +28,4 @@ def initialize (table_name):
 print("welcome");
 frame = initialize('teacher');
 
-print(frame);
+print(frame.head());
