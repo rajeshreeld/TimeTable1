@@ -3,11 +3,12 @@ import pymysql as py
 import pandas as pd
 import  entities as ent
 
+
 # Class for conencting to database
 class DB:
 
     def getConnection (self):
-        engine = sql.create_engine('mysql+pymysql://root:Admin@123@localhost/timetable');
+        engine = sql.create_engine('mysql+pymysql://root:pedha@localhost/timeTable');
 
         #print(engine.table_names());
         con = engine.connect();
@@ -15,6 +16,7 @@ class DB:
 
     def close (self,con):
         con.close();
+
 
 # Initialization method to initialize all frames
 def initialize (table_name):
@@ -28,26 +30,15 @@ def initialize (table_name):
     return frame;
 
 
-print("welcome");
-
-# Required frames
-f_subject = initialize('subject');
-f_class = initialize('class');
-f_teacher = initialize('teacher');
-f_room = initialize('room');
-f_batch = initialize('batch');
-f_batchClass = initialize('batchclass'); #Name of table is batchClass,python is taking batchglass
-f_subjectClassTeacher = initialize('subjectclassteacher');
-
-#print(f_subjectClassTeacher);
-
-
 def execquery (query):
-
     db = DB()
     con = db.getConnection()
+
 #    res = con.execute(query)
 #    frame = res.fetchall()
+
     frame = pd.read_sql_query(query, con)
+
     db.close(con)
-    return frame
+
+print(f_subjectClassTeacher);
