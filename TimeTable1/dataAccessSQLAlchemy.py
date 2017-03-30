@@ -39,4 +39,15 @@ f_batch = initialize('batch');
 f_batchClass = initialize('batchclass'); #Name of table is batchClass,python is taking batchglass
 f_subjectClassTeacher = initialize('subjectclassteacher');
 
-print(f_subjectClassTeacher);
+#print(f_subjectClassTeacher);
+
+
+def execquery (query):
+
+    db = DB()
+    con = db.getConnection()
+#    res = con.execute(query)
+#    frame = res.fetchall()
+    frame = pd.read_sql_query(query, con)
+    db.close(con)
+    return frame
