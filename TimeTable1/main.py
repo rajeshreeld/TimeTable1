@@ -16,10 +16,10 @@ f_join_subject_subjectBatchTeacher.insert(6,'category','L') #L for Lab
 f_subjectBatchClassTeacher = pd.concat([f_join_subject_subjectClassTeacher, f_join_subject_subjectBatchTeacher])
 #print (f_subjectBatchClassTeacher)
 
+x = f_subjectBatchClassTeacher;
+x.reset_index();
 
-f_subjectBatchClassTeacher.reset_index();
-
-totallectures_list = (f_subjectBatchClassTeacher['totalHrs'] / f_subjectBatchClassTeacher['eachSlot'])
+totallectures_list = (x['totalHrs'] / x['eachSlot'])
 
 
 # Create empty dataframe to save all the requirements
