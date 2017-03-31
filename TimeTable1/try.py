@@ -3,34 +3,6 @@ import pandas as pd
 import random
 import numpy as np
 
-def teacher_overlap(timetable):
-    teacher_cost = 0
-    for day in range(n_days):
-        for slot in range (n_slots):
-            temp_array = timetable[:, day, slot, :]
-            teacher_list = []
-            for row in temp_array:
-                for cell in row:
-                    if not np.isnan(cell):
-                        req = req_all.loc[req_all.index == cell]
-                        teacher_list.append(req.iloc[0]['teacherId'])
-            for teacher_id in teacher_list:
-                if teacher_id is not None:
-                    teacher_cost = teacher_cost + teacher_list.count(teacher_id) - 1
-
-    return teacher_cost
-
-def class_batch_overlap(timetable):
-    cb_cost = 0
-    for cl in range(n_classes):
-        class_tt = timetable[cl,:,:,:]
-        for day in range(n_days):
-            for slot in range(n_slots):
-                in_same_slot = class_tt[day,slot,:]
-                print(in_same_slot)
-
-
-
 print("welcome");
 
 f_join_subject_subjectClassTeacher = da.execquery('select s.subjectId, subjectShortName, totalHrs, eachSlot, c.classId, teacherId from subject s, subjectClassTeacher c where s.subjectId = c.subjectId;')
@@ -85,10 +57,8 @@ for c in (set(req_all.classId)):    #First take one class
                 timetable_np[c,r_day,r_slot,r_lecnumber]=req
                 notassigned=0
 
-    #print(timetable_np[c,:,:,:])
-#print(timetable_np.shape);
-teacher_cost = teacher_overlap(timetable_np)
-print("Teacher cost:")
-print(teacher_cost)
 
-class_batch_overlap(timetable_np)
+arr_2d = timetable_np.reshape(70,40)
+print(arr_2d)
+pd.DataFrame(arr_2d).to_csv('tt_2d')
+    #print(timetable_np[c,:,:,:])

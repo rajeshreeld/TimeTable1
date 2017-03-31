@@ -34,8 +34,6 @@ def execquery (query):
     db = DB()
     con = db.getConnection()
 
-#    res = con.execute(query)
-#    frame = res.fetchall()
 
     frame = pd.read_sql_query(query, con)
 
