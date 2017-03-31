@@ -8,7 +8,7 @@ import  entities as ent
 class DB:
 
     def getConnection (self):
-        engine = sql.create_engine('mysql+pymysql://root:Admin@123@localhost/timetable');
+        engine = sql.create_engine('mysql+pymysql://root:pedha@localhost/timeTable');
 
         #print(engine.table_names());
         con = engine.connect();
@@ -38,4 +38,6 @@ def execquery (query):
     frame = pd.read_sql_query(query, con)
 
     db.close(con)
+
+    return frame;
 

@@ -17,7 +17,6 @@ print(f_subjectBatchClassTeacher)
 #x = f_subject.join(f_subjectBatchTeacher.set_index('subjectId'), on='subjectId')
 x=f_subjectBatchClassTeacher
 x=x.reset_index()
-x.to_csv("x.csv")
 totallectures_list = (x['totalHrs'] / x['eachSlot'])
 
 
@@ -31,8 +30,6 @@ for i in range(len(req_all)):
     if (x.iloc[j]['totalHrs'] == 0):
         j = j + 1
 #print(req_all)
-
-req_all.to_csv("req_all.csv")
 
 #These values need to be calculated from the database
 n_classes=14
@@ -61,4 +58,6 @@ for c in (set(req_all.classId)):    #First take one class
 arr_2d = timetable_np.reshape(70,40)
 print(arr_2d)
 pd.DataFrame(arr_2d).to_csv('tt_2d')
+
+read_arr_2d =
     #print(timetable_np[c,:,:,:])
