@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5eb5df15-ccb2-42cf-9214-34a4d670b7df</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>dataAccessSQLAlchemy.py</StartupFile>
+    <StartupFile>roomGroup.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -31,6 +31,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="entities.py" />
+    <Compile Include="main.py" />
+    <Compile Include="roomGroup.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="files\" />
