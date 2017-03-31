@@ -41,12 +41,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="files\batch-can-overlap.csv" />
-    <Content Include="files\batch.csv" />
-    <Content Include="files\class.csv" />
-    <Content Include="files\config.txt" />
-    <Content Include="files\room.csv" />
-    <Content Include="files\subject.csv" />
-    <Content Include="files\teacher.csv" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="{9a7a9026-48c1-4688-9d5d-e5699d47d074}\3.4" />

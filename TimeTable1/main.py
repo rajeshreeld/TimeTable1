@@ -32,11 +32,12 @@ f_join_subject_subjectBatchTeacher = da.execquery('select s.subjectId, subjectSh
 f_join_subject_subjectBatchTeacher.insert(6,'category','L') #L for Lab
 #f_join_subject_subjectBatchTeacher.rename(columns={'batchId':'classOrBatchId'}, inplace=True)
 f_subjectBatchClassTeacher = pd.concat([f_join_subject_subjectClassTeacher, f_join_subject_subjectBatchTeacher])
-print(f_subjectBatchClassTeacher)
+#print(f_subjectBatchClassTeacher)
 #x = f_subject.join(f_subjectBatchTeacher.set_index('subjectId'), on='subjectId')
-x=f_subjectBatchClassTeacher
-x=x.reset_index()
-x.to_csv("x.csv")
+
+x = f_subjectBatchClassTeacher
+x = x.reset_index()
+
 totallectures_list = (x['totalHrs'] / x['eachSlot'])
 
 
@@ -51,7 +52,6 @@ for i in range(len(req_all)):
         j = j + 1
 #print(req_all)
 
-req_all.to_csv("req_all.csv")
 
 # Create new panel
 #timetable1 = pd.panel4D(items=10, major_axis=5, minor_axis=10, dtype=int)  # Check if we can do something by dtype = some class here

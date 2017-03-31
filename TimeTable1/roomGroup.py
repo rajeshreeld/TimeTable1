@@ -18,6 +18,7 @@ def get_room_groups(lab_group, theory_group):
             lab_group.append(f_room.iloc[i]['roomId']);
 
 
+
 lab_group = []
 theory_group = []
 
