@@ -1,6 +1,5 @@
 import dataAccessSQLAlchemy as da
 import pandas as pd
-import numpy
 import random
 import numpy as np
 print("welcome");

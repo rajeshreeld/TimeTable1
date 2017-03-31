@@ -6,16 +6,22 @@ import numpy as np
 
 
 
-f_room = da.initialize('room');
+def get_room_groups(lab_group, theory_group):
+    "Forms 2 groups of rooms. lab_group contains rooms with roomCount < 25, all others in theory_group"
+
+    f_room = da.initialize('room');
+
+    for i in range(len(f_room)):
+        if (f_room.iloc[i]['roomCount'] > 25):
+            theory_group.append(f_room.iloc[i]['roomId']);
+        else:
+            lab_group.append(f_room.iloc[i]['roomId']);
+
+
 lab_group = []
 theory_group = []
-for r in f_room:
-    print(r.iloc['roomId']);
-    #if (r['roomCount'] <= 25):
-     #   lab_group.append(r.roomId);
-    #else:
-     #   theory_group.append(r.roomId);
 
+get_room_groups(lab_group, theory_group);
 
-print(lab_group);
-print(theory_group);
+print(theory_group, len(theory_group));
+print(lab_group, len(lab_group));
