@@ -1,7 +1,7 @@
 import sqlalchemy as sql
 import pymysql as py
 import pandas as pd
-import  entities as ent
+
 
 
 # Class for conencting to database

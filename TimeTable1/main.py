@@ -55,7 +55,7 @@ for i in range(len(req_all)):
         x.set_value(j,'totalHrs', x.loc[j]['totalHrs'] - x.loc[j]['eachSlot'])
     if (x.iloc[j]['totalHrs'] == 0):
         j = j + 1
-#print(req_all)
+print(req_all)
 
 
 #These values need to be calculated from the database
@@ -84,7 +84,7 @@ for c in (set(req_all.classId)):    #First take one class
 
 #print(timetable_np[c,:,:,:])
 #print(timetable_np.shape);
-teacher_cost = teacher_overlap(timetable_np)
-print("Teacher cost:")
-print(teacher_cost)
+#teacher_cost = teacher_overlap(timetable_np)
+#print("Teacher cost:")
+#print(teacher_cost)
 
